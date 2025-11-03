@@ -16,13 +16,13 @@ function ToolCardComponent({ id, name, description }: Props) {
 			animate={{ opacity: 1, y: 0 }}
 			whileHover={{ scale: 1.02 }}
 			transition={{ duration: 0.25 }}
-			className="p-4 border rounded bg-white dark:bg-slate-800"
+			className="p-4 rounded-lg bg-white dark:bg-gray-900"
 		>
 			<h3 className="font-semibold text-lg">{name}</h3>
-			<p className="text-sm text-slate-600 dark:text-slate-300">{description}</p>
+			<p className="text-sm text-gray-600 dark:text-gray-300">{description}</p>
 
 			<div className="mt-3">
-				<Link href={`/tools/${id}`} className="text-indigo-600 text-sm">Open</Link>
+				<Link href={`/tools/${id}`} className="px-3 py-1.5 bg-primary text-white rounded-lg text-sm">Open</Link>
 			</div>
 		</motion.article>
 	);

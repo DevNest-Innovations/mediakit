@@ -3,11 +3,15 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary: #00d3cf;
+  --primary-opacity: #00d3cf61;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-opacity: var(--primary-opacity);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -16,6 +20,8 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --primary: #00d3cf;
+    --primary-opacity: #00d3cf61;
   }
 }
 
@@ -23,4 +29,36 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.scrollbar-primary::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar-primary::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
+
+.scrollbar-primary::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+
+#waveform ::part(region-handle-left) {
+  border-left-width: 12px !important;
+  border-left-color: #fff !important;
+  border-radius: 6px;
+}
+
+#waveform ::part(region-handle-right) {
+  border-right-width: 12px !important;
+  border-right-color: #fff !important;
+  border-radius: 6px;
+}
+
+
+#waveform ::part(region) {
+  background-color: var(--primary-opacity) !important;
 }

@@ -25,7 +25,7 @@ export default function Modal({ open, onClose, title, children }: Props) {
 						animate={{ y: 0, opacity: 1 }}
 						exit={{ y: 12, opacity: 0 }}
 						onClick={(e) => e.stopPropagation()}
-						className="bg-white dark:bg-slate-800 p-6 rounded max-w-md w-full shadow-lg"
+						className="bg-white dark:bg-gray-900 p-6 rounded max-w-md w-full shadow-lg"
 					>
 						{title && <h3 className="font-semibold">{title}</h3>}
 						<div className="mt-3">{children}</div>

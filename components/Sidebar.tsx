@@ -20,7 +20,7 @@ export default function Sidebar() {
 				{tools.map((t) => (
 					<li key={t.id}>
 						<motion.div whileHover={{ x: 4 }} className="rounded">
-							<Link href={`/tools/${t.id}`} className="block px-3 py-2 text-sm text-slate-700 dark:text-slate-200 rounded hover:bg-slate-100 dark:hover:bg-slate-700">
+							<Link href={`/tools/${t.id}`} className="block px-3 py-2 text-sm text-gray-900 dark:text-gray-200 rounded hover:bg-gray-100 dark:hover:bg-gray-900">
 								{t.name}
 							</Link>
 						</motion.div>

@@ -2,7 +2,7 @@
 import { useCallback, useRef, useState } from 'react';
 
 type Props = {
-	onProcess?: (previewUrl?: string) => void;
+	onProcess?: (previewUrl?: string, filename?: string) => void;
 };
 
 export default function FileUpload({ onProcess }: Props) {
@@ -21,7 +21,8 @@ export default function FileUpload({ onProcess }: Props) {
 		await new Promise((r) => setTimeout(r, 800));
 
 		setLoading(false);
-		onProcess?.(url);
+		// Pass original filename along with preview URL
+		onProcess?.(url, file.name);
 	}, [onProcess]);
 
 	const onDrop = useCallback((e: React.DragEvent) => {
@@ -45,21 +46,21 @@ export default function FileUpload({ onProcess }: Props) {
 				}}
 				onDragLeave={() => setDragOver(false)}
 				onDrop={onDrop}
-				className={`flex flex-col items-center justify-center gap-2 p-6 border-2 rounded-md cursor-pointer transition ${
-					dragOver ? 'border-indigo-500 bg-indigo-50 dark:bg-slate-800' : 'border-dashed'
+				className={`flex flex-col items-center justify-center gap-2 p-6 border-2 border-primary rounded-md cursor-pointer transition ${
+					dragOver ? 'bg-primary dark:bg-gray-900' : 'border-dashed'
 				}`}
 				onClick={() => inputRef.current?.click()}
 				role="button"
 			>
 				{loading ? (
 					<div className="flex items-center gap-2">
-						<div className="w-5 h-5 border-2 border-indigo-600 border-t-transparent rounded-full animate-spin" />
-						<span className="text-sm text-slate-600 dark:text-slate-300">Processing...</span>
+						<div className="w-5 h-5 border-2 border-primary border-t-transparent rounded-full animate-spin" />
+						<span className="text-sm text-gray-600 dark:text-gray-300">Processing...</span>
 					</div>
 				) : (
 					<>
-						<p className="text-sm text-slate-600 dark:text-slate-300">Drag & drop a file, or click to select</p>
-						<p className="text-xs text-slate-400">Supports images, audio, and common formats</p>
+						<p className="text-sm text-gray-600 dark:text-gray-300">Drag & drop a file, or click to select</p>
+						<p className="text-xs text-gray-400">Supports images, audio, and common formats</p>
 					</>
 				)}
 				<input ref={inputRef} type="file" className="hidden" onChange={onInputChange} />

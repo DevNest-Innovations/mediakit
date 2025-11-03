@@ -1,7 +1,7 @@
 import Head from 'next/head';
 
 // ToolCard is a client component; dynamically import for better SSR behavior
-import ToolCard from '../../components/ToolCard';
+import ToolCard from '../../../components/ToolCard';
 
 const TOOLS = [
   { id: 'image-to-video', name: 'Image → Video', desc: 'Turn images into motion clips' },
