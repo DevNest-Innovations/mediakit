@@ -44,7 +44,7 @@ export default function SignIn() {
   };
 
   return (
-    <div className="max-w-md min-w-[340px] mx-auto p-6 rounded-lg bg-white dark:bg-gray-900">
+    <div className="max-w-md lg:min-w-[340px] mx-auto p-6 rounded-lg bg-white dark:bg-gray-900">
       <h2 className="text-center text-xl font-semibold mb-4">Sign in</h2>
 
       <form onSubmit={handleSignIn} className="space-y-4">

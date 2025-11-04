@@ -24,7 +24,7 @@ export default function RootLayout({
         {/* Navbar is a client component */}
         <Navbar />
 
-        <div className="w-100 h-100 mx-auto p-6 lg:px-8 min-h-[calc(100vh-176px)] pt-4 px-4 md:px-8  flex gap-6">
+        <div className="w-fit mx-auto p-6 lg:px-8 min-h-[calc(100vh-176px)] pt-4 px-4 md:px-8  flex gap-6">
           {children}
         </div>
 

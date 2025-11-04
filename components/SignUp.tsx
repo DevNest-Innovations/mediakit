@@ -42,7 +42,7 @@ export default function SignUp() {
   };
 
   return (
-    <div className="max-w-md min-w-[340px] mx-auto p-6 rounded-lg bg-white dark:bg-gray-900">
+    <div className="max-w-md lg:min-w-[340px] mx-auto p-6 rounded-lg bg-white dark:bg-gray-900">
       <h2 className="text-center text-xl font-semibold mb-4">Create account</h2>
 
       <form onSubmit={handleSignUp} className="space-y-4">
